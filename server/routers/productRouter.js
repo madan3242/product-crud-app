@@ -35,7 +35,7 @@ router.route('/products/:id').get(getSingleProduct);
     Method: PUT
     Fields: name, image, price, qty, info
 */
-router.route('/products').put(updateProduct)
+router.route('/products/:id').put(updateProduct)
 
 /*
     USAGE: Delete Product
@@ -43,6 +43,6 @@ router.route('/products').put(updateProduct)
     Method: DELETE
     Fields: no-fields
 */
-router.route('/products').delete(deleteProduct);
+router.route('/products/:id').delete(deleteProduct);
 
 export default router;
