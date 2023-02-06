@@ -1,9 +1,11 @@
 import app from "./app.js";
 import mongoose from "mongoose";
 
+const PORT = process.env.PORT || 4000;
+
 const connect = () => {
     mongoose.set('strictQuery', true);
-    mongoose.connect(process.env.MONGODB_URL, {
+    mongoose.connect(process.env.MONGODB_ATLAS, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
@@ -15,7 +17,7 @@ const connect = () => {
     })
 }
 
-app.listen(process.env.PORT, process.env.HOSTNAME, (error) => {
+app.listen(PORT, (error) => {
     connect();
-    console.log(`SERVER RUNNING http://${process.env.HOSTNAME}:${process.env.PORT}`);
+    console.log(`SERVER RUNNING ON ${process.env.PORT}`);
 })
