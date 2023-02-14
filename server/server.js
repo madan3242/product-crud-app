@@ -19,5 +19,6 @@ const connect = () => {
 
 app.listen(PORT, (error) => {
     connect();
-    console.log(`SERVER RUNNING ON ${process.env.PORT}`);
+    if(error) throw error
+    console.log(`SERVER RUNNING ON ${PORT}`);
 })
