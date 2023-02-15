@@ -54,7 +54,7 @@ const Admin = () => {
                             <td>{product.info}</td>
                             <td>
                                 <Link className="btn btn-warning mr-1" to={`/update/${product._id}`}>Update</Link>    
-                                <Link className="btn btn-danger" onClick={deleteProduct.bind(this, product._id)}>Delete</Link>    
+                                <Link className="btn btn-danger" onClick={deleteProduct.bind(this, product._id)}>Delete</Link>
                             </td>
                         </tr>
                     })}
