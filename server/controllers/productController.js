@@ -91,7 +91,7 @@ export const deleteProduct = async (req, res) => {
     try {
         let productId = req.params.id;
 
-        let product = Product.findById(productId);
+        let product = await Product.findById(productId);
 
         if(!product) {
             return res.status(401).json({
